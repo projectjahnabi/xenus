@@ -7,6 +7,9 @@ use MongoDB\BSON\ObjectID;
 
 class Collection extends \MongoDB\Collection
 {
+    use Events\Hooks;
+    use Events\Dispatcher;
+
     protected $name = null;
     protected $database = null;
     protected $document = Document::class;
